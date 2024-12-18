@@ -1,14 +1,13 @@
 import React from "react";
-import Navbar from "./Navbar";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <section className="relative h-screen flex flex-col justify-center">
-      <Navbar />
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-black/30 z-10" />
         <video className="w-full h-full object-cover" autoPlay muted loop>
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
       <div className="flex flex-col items-center gap-24">
@@ -17,9 +16,11 @@ const HeroSection = () => {
             Experience the draw of Gravity.
           </h1>
           <p>Redefining the future of SUVs</p>
-          <button className="bg-white text-black uppercase px-6 py-2 rounded-md">
-            Stay informed
-          </button>
+          <Link href="/informed">
+            <button className="bg-white text-black uppercase px-6 py-2 rounded-md">
+              Stay informed
+            </button>
+          </Link>
         </div>
         <div className="flex justify-between w-3/5 max-w-[900px]">
           <HighlightItem title="Projected Range" content="Over 440 mi" />
